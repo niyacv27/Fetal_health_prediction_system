@@ -33,14 +33,7 @@ from reportlab.lib.styles import getSampleStyleSheet
 
 
 
-app = Flask(__name__)
-app.secret_key = 'your_secret_key'
-
-
-app.config["MONGO_URI"] = "mongodb+srv://niyacv13:niyaviju@cluster0.78z9j.mongodb.net/fetalstatus?retryWrites=true&w=majority&appName=Cluster0"
-mongo = PyMongo(app)
-db = mongo.db  
-
+// give mongodb atlas database connection//
 
 if db is None:
     raise Exception("MongoDB connection failed!")
@@ -54,8 +47,8 @@ lab_reports_collection = db["lab_reports"]
 
 
 
-if not admin_collection.find_one({"email": "fhadmin@gmail.com"}):
-    admin_collection.insert_one({"email": "fhadmin@gmail.com", "password": "admin123"})
+if not admin_collection.find_one({"email": "abc@gmail.com"}):
+    admin_collection.insert_one({"email": "abc@gmail.com", "password": "abc123"})
 
 
 
